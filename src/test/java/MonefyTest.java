@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import java.text.DecimalFormat;
 
-public class HomePageTest extends BaseTest{
+public class MonefyTest extends BaseTest{
 
     private static DecimalFormat dFormat = new DecimalFormat("#.##");
     double income1 = 3500.75d;
@@ -60,7 +60,6 @@ public class HomePageTest extends BaseTest{
         TransferPage transferPage = new TransferPage(driver);
         transferPage.createNewTransfer(transfer);
         homePage.switchAccount(AccountType.CASH);
-        homePage.viewBalanceDetails();
         Assert.assertTrue(homePage.isCategoryDisplayed(Category.CARD));
         homePage.switchAccount(AccountType.CARD);
         Assert.assertTrue(homePage.isCategoryDisplayed(Category.CASH));

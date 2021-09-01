@@ -1,6 +1,7 @@
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import java.net.URL;
@@ -27,6 +28,11 @@ public class BaseTest extends Action{
     public static void setup() throws Exception{
         getCapabilities();
 
+    }
+
+    @AfterClass
+    public static void tearDown() throws Exception{
+        driver.quit();
     }
 
 
