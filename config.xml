@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!-- General Config -->
+
+    <!-- Appium Config -->
+    <entry key="platformName">Android</entry>
+    <entry key="platformVersion">11.0</entry>
+    <entry key="deviceName">emulator-5554</entry>
+    <entry key="appPackage">com.monefy.app.lite</entry>
+    <entry key="appActivity">com.monefy.activities.main.MainActivity_</entry>
+    <entry key="app">C:\Users\LouieP\Downloads\com.monefy.app.lite_2021-08-21.apk</entry>
+    <entry key="URL">http://127.0.0.1:4723/wd/hub</entry>
+    
+</properties>
