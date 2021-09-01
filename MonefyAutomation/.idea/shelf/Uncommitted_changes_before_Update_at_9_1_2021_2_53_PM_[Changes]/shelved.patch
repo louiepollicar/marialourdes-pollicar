@@ -1,0 +1,286 @@
+Index: src/main/java/PageObject/HomePage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport io.appium.java_client.android.AndroidDriver;\r\nimport io.appium.java_client.android.AndroidElement;\r\nimport io.appium.java_client.pagefactory.AndroidFindBy;\r\nimport io.appium.java_client.pagefactory.AppiumFieldDecorator;\r\nimport org.openqa.selenium.By;\r\nimport org.openqa.selenium.support.PageFactory;\r\nimport org.openqa.selenium.support.ui.ExpectedCondition;\r\nimport org.openqa.selenium.support.ui.ExpectedConditions;\r\nimport org.openqa.selenium.support.ui.WebDriverWait;\r\n\r\nimport java.time.Duration;\r\nimport java.util.List;\r\n\r\npublic class HomePage extends Action{\r\n\r\n    WebDriverWait wait = new WebDriverWait(driver,25);\r\n\r\n    //private AndroidDriver<AndroidElement> driver;\r\n\r\n    public HomePage(){\r\n        //super();\r\n    }\r\n\r\n    public HomePage(AndroidDriver<AndroidElement> driver){\r\n        this.driver = driver;\r\n        PageFactory.initElements(new AppiumFieldDecorator(driver), this);\r\n    }\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/income_button_title\")\r\n    public AndroidElement btnIncome;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/expense_button_title\")\r\n    public AndroidElement btnExpense;\r\n\r\n    @AndroidFindBy(xpath = \"//android.widget.ImageButton[@content-desc=\\\"Open navigation\\\"]\")\r\n    public AndroidElement btnOpenNavigation;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/menu_search\")\r\n    public AndroidElement btnSearch;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/transfer_menu_item\")\r\n    public AndroidElement btnTransfer;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/overflow\")\r\n    public AndroidElement btnSettings;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/leftLinesImageView\")\r\n    public AndroidElement imgBalanceLeftLine;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/income_amount_text\")\r\n    public AndroidElement txtIncome;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/expense_amount_text\")\r\n    public AndroidElement txtExpense;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/balance_amount\")\r\n    public AndroidElement txtBalance;\r\n\r\n    @AndroidFindBy(xpath = \"//android.widget.ImageButton[@content-desc=\\\"Close navigation\\\"]\")\r\n    public AndroidElement btnBack;\r\n\r\n    @AndroidFindBy(xpath = \"//android.widget.TextView[@resource-id=\\\"com.monefy.app.lite:id/textViewCategoryName\\\"]\")\r\n    public AndroidElement txtCategories;\r\n\r\n    @AndroidFindBy(id = \"com.monefy.app.lite:id/account_spinner\")\r\n    public AndroidElement btnAccountSpinner;\r\n\r\n    @AndroidFindBy(xpath = \"/android.widget.ListView/android.widget.LinearLayout[3]\")\r\n    public AndroidElement btnPaymentCard;\r\n\r\n    @AndroidFindBy(xpath = \"/android.widget.ListView/android.widget.LinearLayout[2]\")\r\n    public AndroidElement btnCash;\r\n\r\n    @AndroidFindBy(xpath = \"/android.widget.ListView/android.widget.LinearLayout[1]\")\r\n    public AndroidElement btnAllAccounts;\r\n\r\n    public double getIncome(){\r\n        wait.until(ExpectedConditions.visibilityOf(txtIncome));\r\n        String incomeText = txtIncome.getText().replaceAll(\"[^0-9 .]\",\"\");\r\n        double incomeBalance = Double.parseDouble(incomeText);\r\n        return incomeBalance;\r\n    }\r\n\r\n    public double getExpense(){\r\n        String expenseText = txtExpense.getText().replaceAll(\"[^0-9 .]\",\"\");\r\n        double expenseBalance = Double.parseDouble(expenseText);\r\n        return expenseBalance;\r\n    }\r\n\r\n    public double getBalance(){\r\n        String balanceText = txtBalance.getText().replaceAll(\"[^0-9 .]\",\"\");\r\n        double balance = Double.parseDouble(balanceText);\r\n        return balance;\r\n    }\r\n\r\n    public void viewBalanceDetails(){\r\n        click(imgBalanceLeftLine);\r\n    }\r\n\r\n    public String[] getCategories(){\r\n        List<AndroidElement> allCategories = driver.findElements(By.xpath(\"//android.widget.TextView[@resource-id=\\\"com.monefy.app.lite:id/textViewCategoryName\\\"]\"));\r\n        int size = allCategories.size();\r\n        String[] txtCategories = new String[size];\r\n        for (int count = 0; count < size; count++){\r\n            txtCategories[count]=allCategories.get(count).getText();\r\n        }\r\n        return txtCategories;\r\n    }\r\n\r\n    public boolean isCategoryDisplayed(Category category){\r\n        int size = getCategories().length;\r\n        String[] categories = getCategories();\r\n        boolean isCategoryDisplayed = false;\r\n        for(int count = 0; count < size; count++){\r\n            if (categories[count].contains(category.getText())) {\r\n                isCategoryDisplayed = true;\r\n                break;\r\n            }\r\n            else {\r\n                isCategoryDisplayed = false;\r\n            }\r\n        }\r\n        return isCategoryDisplayed;\r\n    }\r\n\r\n    public void switchAccount(AccountType accountType){\r\n        click(btnOpenNavigation);\r\n        click(btnAccountSpinner);\r\n        click(driver.findElement(By.xpath(\"//android.widget.ListView/android.widget.LinearLayout[\"+accountType.getValue()+\"]\")));\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/PageObject/HomePage.java b/src/main/java/PageObject/HomePage.java
+--- a/src/main/java/PageObject/HomePage.java	(revision 414cbde39927b9cf65453909bc0141734646cabd)
++++ b/src/main/java/PageObject/HomePage.java	(date 1630478773145)
+@@ -96,6 +96,7 @@
+ 
+     public void viewBalanceDetails(){
+         click(imgBalanceLeftLine);
++        waitFor(5);
+     }
+ 
+     public String[] getCategories(){
+@@ -113,6 +114,8 @@
+         String[] categories = getCategories();
+         boolean isCategoryDisplayed = false;
+         for(int count = 0; count < size; count++){
++            System.out.print("count "+categories[count]);
++            System.out.print(category.getText());
+             if (categories[count].contains(category.getText())) {
+                 isCategoryDisplayed = true;
+                 break;
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 414cbde39927b9cf65453909bc0141734646cabd)
++++ /dev/null	(revision 414cbde39927b9cf65453909bc0141734646cabd)
+@@ -1,14 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="MavenProjectsManager">
+-    <option name="originalFiles">
+-      <list>
+-        <option value="$PROJECT_DIR$/pom.xml" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" default="true" project-jdk-name="15" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+deleted file mode 100644
+--- a/.idea/jarRepositories.xml	(revision 414cbde39927b9cf65453909bc0141734646cabd)
++++ /dev/null	(revision 414cbde39927b9cf65453909bc0141734646cabd)
+@@ -1,20 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RemoteRepositoriesConfiguration">
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Central Repository" />
+-      <option name="url" value="https://repo.maven.apache.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Maven Central repository" />
+-      <option name="url" value="https://repo1.maven.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="jboss.community" />
+-      <option name="name" value="JBoss Community repository" />
+-      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+-    </remote-repository>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/runConfigurations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/runConfigurations.xml b/.idea/runConfigurations.xml
+deleted file mode 100644
+--- a/.idea/runConfigurations.xml	(revision 414cbde39927b9cf65453909bc0141734646cabd)
++++ /dev/null	(revision 414cbde39927b9cf65453909bc0141734646cabd)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RunConfigurationProducerService">
+-    <option name="ignoredProducers">
+-      <set>
+-        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
+-      </set>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 414cbde39927b9cf65453909bc0141734646cabd)
++++ /dev/null	(revision 414cbde39927b9cf65453909bc0141734646cabd)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+deleted file mode 100644
+--- a/.idea/compiler.xml	(revision 414cbde39927b9cf65453909bc0141734646cabd)
++++ /dev/null	(revision 414cbde39927b9cf65453909bc0141734646cabd)
+@@ -1,13 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="CompilerConfiguration">
+-    <annotationProcessing>
+-      <profile name="Maven default annotation processors profile" enabled="true">
+-        <sourceOutputDir name="target/generated-sources/annotations" />
+-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+-        <outputRelativeToContentRoot value="true" />
+-        <module name="Monefy" />
+-      </profile>
+-    </annotationProcessing>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	(revision 414cbde39927b9cf65453909bc0141734646cabd)
++++ /dev/null	(revision 414cbde39927b9cf65453909bc0141734646cabd)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(date 1630474906941)
++++ b/.gitignore	(date 1630474906941)
+@@ -0,0 +1,2 @@
++# Project exclude paths
++/target/
+\ No newline at end of file

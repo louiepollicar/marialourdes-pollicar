@@ -1,16 +1,13 @@
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.touch.WaitOptions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.expression.spel.ast.Operator;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;

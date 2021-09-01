@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2ebb003b-31ea-4e28-a857-778cf5f60c05" name="Changes" comment="Updated BaseTest to turn off driver and renamed HomePageTest to MonefyTest">
+      <change afterPath="$PROJECT_DIR$/MonefyAutomation/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MonefyCharterExploratoryTesting.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monefy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/Monefy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AccountType.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/main/java/AccountType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/main/java/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/main/java/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/main/java/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/main/java/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/main/java/PageObject/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/IncomeExpensePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/main/java/PageObject/IncomeExpensePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PageObject/TransferPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/main/java/PageObject/TransferPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MonefyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MonefyAutomation/src/test/java/MonefyTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1xPJXmeMHUcGXcyn5oHAD9w1nuI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\LouieP\IdeaProjects\Monefy\MonefyAutomation" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.MonefyTest">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonefyTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Monefy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MonefyTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonefyTest.AddMultipleExpenseVerifyIncomeAndBalance" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Monefy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MonefyTest" />
+      <option name="METHOD_NAME" value="AddMultipleExpenseVerifyIncomeAndBalance" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonefyTest.AddMultipleIncomeVerifyIncomeAndBalance" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Monefy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MonefyTest" />
+      <option name="METHOD_NAME" value="AddMultipleIncomeVerifyIncomeAndBalance" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonefyTest.TransferAccounts" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Monefy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MonefyTest" />
+      <option name="METHOD_NAME" value="TransferAccounts" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonefyTest.VerifyBalanceDetails" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Monefy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MonefyTest" />
+      <option name="METHOD_NAME" value="VerifyBalanceDetails" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.MonefyTest" />
+        <item itemvalue="TestNG.MonefyTest.TransferAccounts" />
+        <item itemvalue="TestNG.MonefyTest.VerifyBalanceDetails" />
+        <item itemvalue="TestNG.MonefyTest.AddMultipleIncomeVerifyIncomeAndBalance" />
+        <item itemvalue="TestNG.MonefyTest.AddMultipleExpenseVerifyIncomeAndBalance" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ebb003b-31ea-4e28-a857-778cf5f60c05" name="Changes" comment="" />
+      <created>1630250833053</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630250833053</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added .iml file">
+      <created>1630475748683</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630475748683</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated BaseTest to turn off driver and renamed HomePageTest to MonefyTest">
+      <created>1630479172290</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630479172290</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added .iml file" />
+    <MESSAGE value="Updated BaseTest to turn off driver and renamed HomePaageTest to MonefyTest" />
+    <MESSAGE value="Updated BaseTest to turn off driver and renamed HomePageTest to MonefyTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated BaseTest to turn off driver and renamed HomePageTest to MonefyTest" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MonefyAutomation/src/test/java/MonefyTest.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MonefyAutomation/src/test/java/MonefyTest.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -5,11 +5,9 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 public class HomePage extends Action{
@@ -96,6 +94,7 @@ public class HomePage extends Action{
 
     public void viewBalanceDetails(){
         click(imgBalanceLeftLine);
+        waitFor(5);
     }
 
     public String[] getCategories(){
@@ -113,6 +112,8 @@ public class HomePage extends Action{
         String[] categories = getCategories();
         boolean isCategoryDisplayed = false;
         for(int count = 0; count < size; count++){
+            System.out.print("count "+categories[count]);
+            System.out.print(category.getText());
             if (categories[count].contains(category.getText())) {
                 isCategoryDisplayed = true;
                 break;
